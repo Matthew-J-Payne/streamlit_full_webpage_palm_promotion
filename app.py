@@ -84,7 +84,7 @@ def expansion_function():
                                         geojson = plantations.geometry,
                                         locations = plantations.index,
                                         color = "year_plant",
-                                        #hover_name = "year_plant",
+                                        hover_name = "year_plant",
                                         color_continuous_scale = "inferno",
                                         center = {"lat": -8.540459, "lon": -74.743779},
                                         mapbox_style = "satellite-streets",
