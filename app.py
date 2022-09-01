@@ -187,7 +187,6 @@ st.write("From the graph below, there is a statistically significant relationshi
 # column3 = st.columns(1)
 # with column3:
 st.plotly_chart(graphing())
-st.write("Apologies for the pixelated image, the PIL library that reads in images doesn't scale down images well.")
 st.write("But, we can't see if there is spatial variation in the promotion responses!  \n Which is where fixed-effects regression comes in handy.")
 st.write("Apologies for the pixelated image, the PIL library that reads in images doesn't scale down well.")
 st.image("coplot_25km2_quadrats.png", width = 600, caption = "Conditional plots for y ~ x, where y is non-oil palm deforestation and x is oil palm expansion. Here, we can see how the responses differ when split by quadrat")
