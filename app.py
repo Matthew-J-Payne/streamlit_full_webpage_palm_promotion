@@ -57,7 +57,7 @@ def deforestation_function():
     # incorporating polygonal data into streamlit
     deforestation = gpd.read_file("deforestation_nonpalm.shp")
     deforestation = deforestation.to_crs(4326)
-    loss = px.choropleth_mapbox(deforestation,
+    loss = px.choropleth_mapbox(data_frame = deforestation,
                                     geojson = deforestation.geometry,
                                     locations = deforestation.index,
                                     color = "year",
@@ -69,6 +69,12 @@ def deforestation_function():
                                     width = 800,
                                     height = 600
                                     )
+    quadrats = gpd.read_file("quadrats.shp")
+    quadrats = quadrats.to_crs(4326)
+    loss.add_choroplethmapbox(data_frame = quadrats,
+                                geojson = quadrats.geometry,
+                                locations = quadrats.index,
+                                color = "Reds")
     loss.update_traces(marker_line_width = 0)
     #loss.update_layout(title_text = "Deforestation across the study area")
     
