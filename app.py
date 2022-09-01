@@ -8,7 +8,7 @@ px.set_mapbox_access_token("pk.eyJ1IjoibWF0dGhld2pwYXluZSIsImEiOiJjbDN1NTk5dnEwZ
 import streamlit as st
 st.set_page_config(layout="wide")
 
-@st.cache
+#@st.cache
 def graphing():
     
     palm = pd.read_csv("palm_areaYear2001-2015_timeseries_quadrat_25km2.csv")
@@ -41,10 +41,10 @@ def graphing():
                     yaxis = dict(title = "Area (km<sup>2</sup>)", gridcolor = "#D3D3D3", linecolor = "Black", mirror = True, ticks = "outside"),
                     paper_bgcolor='rgba(0,0,0,0)',
                     plot_bgcolor='rgba(0,0,0,0)',
-                    height = 150,
-                    width = 100,
+                    height = 500,
+                    width = 400,
                     font = dict(family = "Helvetica", color = "Black", size = 16),
-                    legend = dict(orientation = "h", x = 0.20, y = -0.15),
+                    legend = dict(orientation = "h", x = 0.05, y = -0.22),
                     #title = "Oil palm expansion and non-oil palm deforestation across the study site",
                     autosize = True
                     )
@@ -120,12 +120,15 @@ def expansion_function():
 ############################
 
 #st.title("this is a test streamlit title!")
-st.title("Visualising oil palm expansion and non-oil palm deforestation")#, in the Central Peruvian Amazon")
-st.title("in the Central Peruvian Amazon ")
+st.title("This is an companion dashboard for the poster:")
+st.title("Oil palm promotes indirect land-use change in the Central Peruvian Amazon")#, in the Central Peruvian Amazon")
 with st.expander("Click here for contact details"):
-    st.markdown("Contact me at matthewjpayne1@gmail.com, if you're interested in collaborations or just want to chat!  \n *I'll be sure to add more functionality to this dashboard in the future!*")
+    st.markdown("Contact me at matthewjpayne1@gmail.com, if you're interested in collaborations or just want to chat!") # \n *I'll be sure to add more functionality to this dashboard in the future!*")
 
-st.markdown("**Some contextual information about the dashboard**:  \n The following data are some outputs from my PhD thesis, I wanted a way to interactively share my work and I achieved this using the streamlit Python library, a dashboard library that is much more intuitive than Dash (sorry Plotly).  \n  \n **Research context:**  \n I am interested in whether the expansion of oil palm promotes an indirect land-use change in the surrounding area, which is why the deforestation does not include forest that was cleared for oil palm development.")
+st.markdown("**Some contextual information about the dashboard**:  \n"
+            "I thought this would be a good guide to familiarise any interested readers with the poster.  \n "
+            "Hopefully, the poster speaks for itself.  \n But if not or you're just curious, read on..."
+            "\n  \n **Research context:**  \n I am interested in exploring the promotion of indirect land-use change as deforestation by oil palm expansion.")#in the surrounding area, which is why the deforestation does not include forest that was cleared for oil palm development.")
 
 
 column1, column2 = st.columns(2)
@@ -149,7 +152,7 @@ with st.expander("Click here for the deforestation data source"):
 # with st.expander("Click here for the age estimation data source"):
 #     st.markdown("Málaga, N., Hergoualc’h, K., Kapp, G. et al. Variation in Vegetation and Ecosystem Carbon Stock Due to the Conversion of Disturbed Forest to Oil Palm Plantation in Peruvian Amazonia. Ecosystems 24, 351–369 (2021). Data available on-line from https://data.cifor.org/dataset.xhtml?persistentId=doi:10.17528/CIFOR/DATA.00196")
 
-st.header("Oil palm expansion and non-oil palm deforestation across the study area in the above maps")
+st.header("Sitewide non-oil palm deforestation is not significantly predicted by oil palm expansion")
 st.write("From the graph below, it looks like there *isn't* a statistically valid relationship between oil palm and the non-palm deforestation in the map, and true there isn't.  \n  \n *...across the whole area in the same year.*  \n  \n Step in **spatially-fixed** and **time-fixed effects panel regression**, which can account for spatial and temporal variation in deforestation response.  \n  \n And that's it, for now. I'm intentionally withholding the model and plots until they are published in an academic paper.")
 st.caption("*As a side note - I hope to code a way for this graph to poll the bounds of the above maps and reflect the values within.*")
 #st.subheader("Oil palm expansion and non-oil palm deforestation across the study site")
