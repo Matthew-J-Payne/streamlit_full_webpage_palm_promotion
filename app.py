@@ -148,14 +148,15 @@ def expansion_function():
 ############################
 
 #st.title("this is a test streamlit title!")
-st.title("This is an companion dashboard for the poster:")
-st.title("Oil palm promotes indirect land-use change in the Central Peruvian Amazon")#, in the Central Peruvian Amazon")
+st.title("This is streamlit dashboard to visualise:")
+st.title("The promotion of indirect land-use change by oil palm expansion, in the Central Peruvian Amazon")#, in the Central Peruvian Amazon")
 with st.expander("Click here for contact details"):
     st.markdown("Contact me at matthewjpayne1@gmail.com, if you're interested in collaborations or just want to chat!") # \n *I'll be sure to add more functionality to this dashboard in the future!*")
 
-st.markdown("**Some contextual information about the dashboard**:  \n"
-            "I thought this would be a good guide to familiarise any interested readers with the poster.  \n "
-            "Hopefully, the poster speaks for itself.  \n But if not or you're just curious, read on..."
+st.markdown(
+    #"**Some contextual information about the dashboard**:  \n"
+           # "I thought this would be a good guide to familiarise any interested readers with the poster.  \n "
+            #"Hopefully, the poster speaks for itself.  \n But if not or you're just curious, read on..."
             "\n  \n **Research context:**  \n I am interested in exploring the promotion of indirect land-use change as deforestation by oil palm expansion.")#in the surrounding area, which is why the deforestation does not include forest that was cleared for oil palm development.")
 
 
@@ -187,6 +188,6 @@ st.write("From the graph below, there is a statistically significant relationshi
 # column3 = st.columns(1)
 # with column3:
 st.plotly_chart(graphing())
-st.write("But, we can't see if there is spatial variation in the promotion responses!  \n Which is where fixed-effects regression comes in handy.")
-st.write("Apologies for the pixelated image, the PIL library that reads in images doesn't scale down well.")
-st.image("coplot_25km2_quadrats.png", width = 600, caption = "Conditional plots for y ~ x, where y is non-oil palm deforestation and x is oil palm expansion. Here, we can see how the responses differ when split by quadrat")
+st.write("But, we can't see if there is spatial variation in the promotion responses!  \n Which is where fixed-effects regression comes in handy.  \n  The juicy graphs and tables are in the process of being peer-reviewed for the journal, Environmental Research Letters,  \n   once the paper is published then I will update this website with the information. :) ")
+# st.write("Apologies for the pixelated image, the PIL library that reads in images doesn't scale down well.")
+# st.image("coplot_25km2_quadrats.png", width = 600, caption = "Conditional plots for y ~ x, where y is non-oil palm deforestation and x is oil palm expansion. Here, we can see how the responses differ when split by quadrat")
