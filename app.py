@@ -148,7 +148,7 @@ def expansion_function():
 ############################
 
 #st.title("this is a test streamlit title!")
-st.title("This is streamlit dashboard to visualise:")
+st.title("This is a streamlit dashboard to visualise:")
 st.title("The promotion of indirect land-use change by oil palm expansion, in the Central Peruvian Amazon")#, in the Central Peruvian Amazon")
 with st.expander("Click here for contact details"):
     st.markdown("Contact me at matthewjpayne1@gmail.com, if you're interested in collaborations or just want to chat!") # \n *I'll be sure to add more functionality to this dashboard in the future!*")
